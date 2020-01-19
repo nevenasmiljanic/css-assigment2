@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF=8" dir="ltr">
+    <meta name="author" content="Nevena Smiljanic">
+    <title>Advanced CSS - Assignment 2</title>
+    
+    <style>
+        #background {
+            height: 700px;
+            width: 700px;
+            margin: auto;
+            background-color: #050210;
+        }
+        #circle {
+            width: 300px;
+            height: 300px;
+            border-radius: 100%;                  
+            background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+            margin: 100px auto;
+            position: absolute;
+            left: 0;
+            right: 0;
+            animation-name: rotate;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            animation-duration: 0.8s;
+        }
+        @keyframes rotate {
+            0%{
+                transform: rotate(0deg); 
+            }
+            25%{
+                transform: rotate(90deg); 
+            }
+            50%{
+               transform: rotate(180deg); 
+            }
+            75%{
+                transform: rotate(270deg); 
+            }
+            100%{
+                Transform: rotate(360deg); 
+            }
+        }
+        #circle::before {
+            position: absolute;
+            content: " ";
+            width: 300px;
+            height: 300px;
+            border-radius: 100%;
+            margin: auto;
+            left: 0;
+            right: 0;
+            filter: blur(50px);
+            background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+            
+        }
+            #inner-circle {
+            width: 250px;
+            height: 250px;
+            border-radius: 100%;
+            background: #050210;
+            margin: auto;
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+         } 
+        
+         #inside-circle {
+            width: 250px;
+            height: 250px;
+            border-radius: 100%;
+            background: #272530;
+            margin: auto;
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            animation-name: skale;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+       }
+         @keyframes skale {
+            0%{
+                transform: scale(0); 
+                filter: opacity(1);
+               
+            }
+            35%{
+                transform: scale(0.35);
+                filter: opacity(0.5);
+                color: 170d3b;
+            }
+           
+            70%{
+                transform: scale(0.70);
+                filter: opacity(0.5);
+                color: 170d3b;
+            }
+            100%{
+                transform: scale(1);
+                filter: opacity(0.5);
+                color: 170d3b;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="background">
+        <div id="circle">
+            <div id="inner-circle">
+                <div id="inside-circle"></div>
+            </div>
+        </div>
+         
+    </div>                                                   
+</body>
+
+</html>
